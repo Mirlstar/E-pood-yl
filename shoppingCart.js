@@ -1,3 +1,7 @@
+import { Inventory } from "./inventory.js";
+
+const inventory = new Inventory();
+
 export class ShoppingCart {
     constructor() {
         this.items = [];
@@ -37,7 +41,26 @@ export class ShoppingCart {
             </div>
         `).join('');
     }
+
+    getCartItems() {
+        return this.items
+        consol.log(getCartItems)
+    }
+
 }
+
+export const addToCart = function (productName, quantity) {
+    console.log("add to cart")
+    const product = inventory.getProduct(productName);
+    if (inventory.checkStock(productName, quantity)) {
+        cart.addItem(product, quantity);
+        inventory.reduceStock(productName, quantity);
+        updateCartDisplay();
+        updateProductStockDisplay(productName);
+    } else {
+        //showAlert(`Laoseis pole piisav. Saadaval on ainult ${product.quantity} tk.`);
+    }
+};
 
 
 

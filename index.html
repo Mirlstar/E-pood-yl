@@ -9,10 +9,16 @@
 </head>
 
 <body>
-    <header>
-        <h1>Minu E-pood</h1>
-    </header>
 
+    <header class="headerContainer">
+        <a href="/">
+            <h1>Minu E-pood</h1>
+        </a>
+        <ul id="categoryMenu"></ul>
+        <button id="cartButton">Ostukorv</button>
+
+    </header>
+    <!--
     <div id="products"></div>
 
     <div id="cart">
@@ -28,7 +34,14 @@
         <button onclick="orderMoreStock()">Tellige juurde</button>
     </div>
 
-    <script type="module" src="index.js"></script>
+    <div id="custom-alert" class="custom-alert hidden">
+        <span id="alert-message"></span>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+    -->
+    <div id="mainBox"></div>
+    <footer> </footer>
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>

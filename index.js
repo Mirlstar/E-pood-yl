@@ -3,16 +3,34 @@ import { ShoppingCart } from './shoppingCart.js';
 import { Inventory } from './inventory.js';
 
 // Create inventory and products
-const inventory = new Inventory();
+/*const inventory = new Inventory();
 inventory.addProduct(new Product('Arvuti', 1000, 5));
 inventory.addProduct(new Product('Telefon', 600, 10));
 inventory.addProduct(new Product('Kõrvaklapid', 100, 15));
 inventory.addProduct(new Product('Õhufritüür', 200, 5));
 inventory.addProduct(new Product('Tahvelarvuti', 50, 20));
-inventory.addProduct(new Product('Kõlar', 200, 10));
+inventory.addProduct(new Product('Kõlar', 200, 10));*/
+/*
+fetch('./tooted.json')
+    .then((response) => response.json())
+    .then((json) => console.log(json))
+    .catch(error => console.error('Error:', error));*/
+
 
 // Create shopping cart
 const cart = new ShoppingCart();
+
+
+// Show custom alert box with a message
+function showAlert(message) {
+    document.getElementById('alert-message').textContent = message;
+    document.getElementById('custom-alert').classList.remove('hidden');
+}
+
+// Hide custom alert box
+window.closeAlert = function () {
+    document.getElementById('custom-alert').classList.add('hidden');
+};
 
 // Render products in the store
 function renderProducts() {
@@ -40,7 +58,7 @@ window.addToCart = function (productName, quantity) {
         updateCartDisplay();
         updateProductStockDisplay(productName);
     } else {
-        alert(`Laoseis pole piisav. Saadaval on ainult ${product.quantity} tk.`);
+        showAlert(`Laoseis pole piisav. Saadaval on ainult ${product.quantity} tk.`);
     }
 };
 
@@ -76,9 +94,9 @@ window.orderMoreStock = function () {
     if (outOfStockProducts.length > 0) {
         inventory.restockOutOfStockProducts(restockAmount);
         outOfStockProducts.forEach(product => updateProductStockDisplay(product.name));
-        alert(`Tellitud ${restockAmount} ühikut juurde ainult otsas olevatele toodetele.`);
+        showAlert(`Tellitud ${restockAmount} ühikut juurde otsas olevatele toodetele.`);
     } else {
-        alert("Kõik tooted on laos olemas, juurde tellimine pole vajalik.");
+        showAlert("Kõik tooted on laos olemas, juurde tellimine pole vajalik.");
     }
 };
 
@@ -96,7 +114,7 @@ window.updateCartQuantity = function (productName, quantity) {
         inventory.increaseStock(productName, Math.abs(difference));
         cart.updateQuantity(productName, quantity);
     } else {
-        alert(`Laoseis pole piisav. Saadaval on ainult ${product.quantity} tk.`);
+        showAlert(`Laoseis pole piisav. Saadaval on ainult ${product.quantity} tk.`);
     }
     updateCartDisplay();
     updateProductStockDisplay(productName);
