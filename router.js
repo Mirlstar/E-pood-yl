@@ -1,19 +1,19 @@
-import { displayAllProducts } from "./categoryView.js";
-import { displayProduct } from "./productView.js";
+import { loadCategoryView } from "./categoryView.js";
+import { loadProductView } from "./productView.js";
 import { loadCartView } from "./cartView.js";
 
 export const navigate = (view, param) => {
     const views = {
-        category: () => displayAllProducts(param || "all"), // Kasuta vaikeväärtust "all" kategooriana
-        product: () => displayProduct(param), // üks toode
-        cart: () => loadCartView(), // Kuvab ostukorvi vaate
+        category: () => loadCategoryView(param || "all"),
+        product: () => loadProductView(param),
+        cart: () => loadCartView(),
     };
 
-    // Vali ja käivita sobiv vaade
+    // Vali õige vaade
     if (views[view]) {
         views[view]();
 
-        // Muuda URL-i ilma lehte uuesti laadimata
+
         const encodedParam = encodeURIComponent(param);
         const newUrl =
             view === "category" && !param ? "/" : `/${view}/${encodedParam || ""}`;
@@ -21,7 +21,7 @@ export const navigate = (view, param) => {
     }
 };
 
-// Sündmuse kuulaja, kui kasutaja vajutab "tagasi" või "edasi" nuppu brauseris
+//event listener millega saab edasi v tagasi liikuda
 window.addEventListener("popstate", () => {
     const path = window.location.pathname;
     const [_, view, param] = path.split("/");

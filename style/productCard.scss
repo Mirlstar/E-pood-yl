@@ -1,0 +1,80 @@
+/* Individual product styling */
+.product-item {
+    width: 240px;
+    border: 1px solid #e0e0e0; // Light border for a minimal look
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 15px;
+    cursor: pointer;
+}
+
+/* Hover effect for product card */
+.product-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Product image */
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+/* Slight zoom on image hover */
+.product-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Product name */
+.product-item h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+/* Description text */
+.product-item p {
+    font-size: 14px;
+    color: #777;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+/* Add to Cart button */
+.product-item .addToCart {
+    padding: 10px 15px;
+    background-color: #007bff; // Subtle blue accent color for Add to Cart
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.product-item .addToCart:hover {
+    background-color: #0056b3; // Slightly darker blue on hover
+}
+
+/* View details button */
+.product-item .view-details {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #f5f5f5; // Light gray for view details
+    color: #333;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.product-item .view-details:hover {
+    background-color: #e0e0e0; // Slightly darker gray on hover
+}

@@ -5,42 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minu E-pood</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/main.css">
 </head>
 
 <body>
 
-    <header class="headerContainer">
-        <a href="/">
-            <h1>Minu E-pood</h1>
-        </a>
-        <ul id="categoryMenu"></ul>
-        <button id="cartButton">Ostukorv</button>
-
+    <header>
+        <nav>
+            <!--navbar kus on kategooriad-->
+            <ul id="category-menu"></ul>
+            <button id="go-to-cart">Ostukorv</button>
+        </nav>
     </header>
-    <!--
-    <div id="products"></div>
+    <!--tooted-->
+    <section id="product-list">
 
-    <div id="cart">
-        <h2>Ostukorv</h2>
-        <div id="cart-items"></div>
-        <p id="total-cost">Kogusumma: 0€</p>
-        <button onclick="clearCart()">Tühjenda ostukorv</button>
-    </div>
-
-
-    <div id="order-more-section">
-        <h3>Telli juurde laoseisu</h3>
-        <button onclick="orderMoreStock()">Tellige juurde</button>
-    </div>
-
-    <div id="custom-alert" class="custom-alert hidden">
-        <span id="alert-message"></span>
-        <button onclick="closeAlert()">OK</button>
-    </div>
-    -->
-    <div id="mainBox"></div>
-    <footer> </footer>
+    </section>
+    <footer>
+        <!--lehe lõpp-->
+        <div class="footer-content">
+            <p>&copy; 2024 Minu E-pood. All rights reserved.</p>
+        </div>
+    </footer>
     <script type="module" src="app.js"></script>
 </body>
 

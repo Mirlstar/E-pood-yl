@@ -1,0 +1,96 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5; // Light gray for a modern, clean look
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: rgb(98, 97, 97); // Dark gray for a sleek look
+    color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Category menu */
+#category-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#category-menu li {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#category-menu li:hover {
+    color: #007bff; // Subtle blue accent on hover
+}
+
+/* Search bar */
+#search-bar {
+    margin-left: auto;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Product list */
+#product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Cart container */
+#cart {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 280px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+/* Cart items list */
+#cart-items {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+/* Button styles */
+button {
+    padding: 10px 15px;
+    background-color: #333; // Neutral dark color for buttons
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #555; // Slightly lighter dark color on hover
+}

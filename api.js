@@ -18,7 +18,7 @@ export async function fetchProducts() {
 
 
 
-export async function fetchProductByCategory(category) {
+export async function fetchProductsByCategory(category) {
     try {
         let response = await fetch(`https://fakestoreapi.com/products/category/${category}`);
         let data = response.json();
